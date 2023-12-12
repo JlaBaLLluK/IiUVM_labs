@@ -287,11 +287,12 @@ int main()
 		cin >> choise;
 		if (!choise)
 		{
-			cout << "      List of connected USB devices" << endl;
+			system("cls");
+			cout << "List of connected USB devices" << endl;
 			for (auto it : deviceArray)
-				cout << id++ << " - " << it.friendlyName << (it.removable ? " [REMOVABLE]" : "") << endl;
-			cout << endl << "If you want to remove the device enter its number " << endl;
-			cout << endl << "If you want to update the list of connected USB devices enter 0 " << endl;
+				cout << id++ << ". " << it.friendlyName << (it.removable ? " [REMOVABLE]" : " [NOT REMOVABLE]") << endl;
+			cout << endl << "Device number to remove it " << endl;
+			cout << endl << "0 to update the list" << endl;
 			continue;
 		}
 		if (deviceArray[choise - 1].removable)
